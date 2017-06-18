@@ -1,0 +1,50 @@
+/* user info float block */
+.userinfo-sticky-container {
+  position: absolute;
+  right: 0;
+  width: 60px;
+  height: 100px;
+  -webkit-transition: all .25s ease-in-out;
+          transition: all .25s ease-in-out;
+}
+
+.userinfo-sticky-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.userinfo-sticky-avatar > img {
+  width: 60px;
+  max-width: 60px;
+  height: 60px;
+  max-height: 60px;
+  background-color: #adadad;
+}
+
+.userinfo-sticky-line {
+  line-height: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.userinfo-sticky-line > a[type="button"] {
+  border: 0 none;
+  text-decoration: none;
+  text-align: center;
+  background-color: transparent;
+  -webkit-transition: all .25s ease;
+          transition: all .25s ease;
+}
+.userinfo-sticky-line > a[type="button"]:hover,
+.userinfo-sticky-line > a[type="button"]:active {
+  text-decoration: none;
+  background-color: #adadad;
+}
+
+a[type="button"].userinfo-sticky-msg.important {
+  
+}
+a[type="button"].userinfo-sticky-sign.disabled {
+  background-color: #adadad;
+}
