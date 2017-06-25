@@ -13,5 +13,5 @@ export default fn => (err, res) => {
   } else if (!res.ok) {
     fn(new Error('Unknow error'));
   }
-  fn(null, processData(res.body));
+  fn(null, processData(res.body || res.text));
 };

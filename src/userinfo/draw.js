@@ -68,7 +68,7 @@ const drawDefaultPanel = (con) => {
 
 const drawDatails = (con) => {
   const holder = document.createElement('section');
-  holder.classList.add('userinfo-sticky-details-panel');
+  holder.classList.add('userinfo-sticky-details-panel', 'hide');
   con.appendChild(holder);
 
   const line1 = document.createElement('div');
@@ -132,7 +132,8 @@ const drawDatails = (con) => {
     usernameLink.appendChild(document.createTextNode(info.username));
     upSpan.appendChild(document.createTextNode((+tracker.up).toLocaleString()));
     timeSpan.appendChild(document.createTextNode((+tracker.time / 86400).toLocaleString()));
-    upSpan.appendChild(document.createTextNode((+tracker.seed).toLocaleString()));
+    hpSpan.appendChild(document.createTextNode((+tracker.hp).toLocaleString()));
+    seedSpan.appendChild(document.createTextNode((+tracker.seed).toLocaleString()));
     leechSpan.appendChild(document.createTextNode((+tracker.leech).toLocaleString()));
   };
 };
@@ -191,10 +192,10 @@ const drawControls = (con) => {
   const bonusLinkButton = document.createElement('a');
   bonusLinkButton.classList.add('userinfo-sticky', 'userinfo-sticky-rss-link');
   bonusLinkButton.type = 'button';
-  bonusLinkButton.title = '收藏';
-  bonusLinkButton.href = '/torrents.php?inclbookmarked=1&allsec=1&incldead=0';
+  bonusLinkButton.title = '使用魔力';
+  bonusLinkButton.href = '/mybonus.php';
   bonusLinkButton.target = '_blank';
-  bonusLinkButton.appendChild(document.createTextNode('收藏'));
+  bonusLinkButton.appendChild(document.createTextNode('使用魔力'));
   line5.appendChild(bonusLinkButton);
 
   holder.appendChild(line1);

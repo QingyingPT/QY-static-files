@@ -8,7 +8,7 @@
   -webkit-transition: all .35s ease-in-out;
           transition: all .35s ease-in-out;
 }
-.userinfo-sticky-container.bgcolor {
+.userinfo-sticky-container.bgcolor > section {
   background-color: rgba(255, 255, 255, .8);
 }
 
@@ -33,7 +33,8 @@
 }
 
 .userinfo-sticky-line {
-  height: 20px; 
+  /*height: 20px;*/
+  word-break: break-all;
 }
 
 a.userinfo-sticky[type="button"] {
@@ -58,19 +59,17 @@ a.userinfo-sticky[type="button"]:active {
 a[type="button"].userinfo-sticky-msg.important {
   background-color: #f9a0a0;
 }
-a[type="button"].userinfo-sticky-sign.disabled {
-  background-color: #adadad;
-}
 
 .userinfo-sticky-details-panel {
   position: absolute;
   top: 0;
-  right: 60px; 
+  right: 60px;
+  bottom: 0;
   width: 120px;
 }
 .userinfo-sticky-control-panel {
   position: absolute;
-  top: 100px;
-  right: 0; 
+  top: 150px;
+  right: 0;
   left: 0;
 }
