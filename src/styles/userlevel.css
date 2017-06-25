@@ -1,0 +1,36 @@
+.username-link,
+.username-link:link,
+.username-link:hover,
+.username-link:active  {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: none; 
+}
+
+  .UC_0,   a.UC_0:hover,   a.UC_0:link,   a.UC_0:visited { color: #708090; } /* Peasant */
+  .UC_1,   a.UC_1:hover,   a.UC_1:link,   a.UC_1:visited { color: #000000; } /* User */
+  .UC_2,   a.UC_2:hover,   a.UC_2:link,   a.UC_2:visited { color: #DAA520; } /* Power User */
+  .UC_3,   a.UC_3:hover,   a.UC_3:link,   a.UC_3:visited { color: #008B8B; } /* Elite User */
+  .UC_4,   a.UC_4:hover,   a.UC_4:link,   a.UC_4:visited { color: #00BFFF; } /* Crazy User */
+  .UC_5,   a.UC_5:hover,   a.UC_5:link,   a.UC_5:visited { color: #8B008B; } /* Insane User */
+  .UC_6,   a.UC_6:hover,   a.UC_6:link,   a.UC_6:visited { color: #4D3B8D; } /* Veteran User */
+  .UC_7,   a.UC_7:hover,   a.UC_7:link,   a.UC_7:visited { color: #FF9C00; } /* Extreme User */
+  .UC_8,   a.UC_8:hover,   a.UC_8:link,   a.UC_8:visited { color: #006400; } /* Ultimate User */
+  .UC_9,   a.UC_9:hover,   a.UC_9:link,   a.UC_9:visited { color: #38ACEC; } /* Nexus Master */
+ .UC_40,  a.UC_40:hover,  a.UC_40:link,  a.UC_40:visited { color: #009F00; } /* VIP */
+ .UC_41,  a.UC_41:hover,  a.UC_41:link,  a.UC_41:visited { color: #009F00; } /* Ambassador */
+ .UC_51,  a.UC_51:hover,  a.UC_51:link,  a.UC_51:visited { color: #FF8888; } /* Active */
+ .UC_60,  a.UC_60:hover,  a.UC_60:link,  a.UC_60:visited { color: #FF66FF; } /* retiree */
+ .UC_61,  a.UC_61:hover,  a.UC_61:link,  a.UC_61:visited { color: rgba(0, 0, 0, .1); } /* Null */
+ .UC_62,  a.UC_62:hover,  a.UC_62:link,  a.UC_62:visited { color: #99CC00; } /* Coder */
+.UC_101, a.UC_101:hover, a.UC_101:link, a.UC_101:visited { color: #1CC6D5; } /* Forum Moderator */
+.UC_102, a.UC_102:hover, a.UC_102:link, a.UC_102:visited { color: #0000CC; } /* Maker */
+.UC_160, a.UC_160:hover, a.UC_160:link, a.UC_160:visited { color: #0099FF; } /* Welfarist */
+.UC_171, a.UC_171:hover, a.UC_171:link, a.UC_171:visited { color: #DC143C; } /* Uploader */
+.UC_173, a.UC_173:hover, a.UC_173:link, a.UC_173:visited { color: #E6E600; } /* Moderator */
+.UC_180, a.UC_180:hover, a.UC_180:link, a.UC_180:visited { color: #4B0082; } /* Administrator */
+.UC_190, a.UC_190:hover, a.UC_190:link, a.UC_190:visited { color: #A0522D; } /* System Operator */
+.UC_198, a.UC_198:hover, a.UC_198:link, a.UC_198:visited { color: #8B0000; } /* Staff leader */
+.UC_255, a.UC_255:hover, a.UC_255:link, a.UC_255:visited { color: rgba(255, 255, 255, 255); } /* Walking Dead */
+

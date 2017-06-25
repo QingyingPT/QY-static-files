@@ -43,7 +43,6 @@
     "webpack": "^2.6.1"
   },
   "dependencies": {
-    "ramda": "^0.24.1",
     "superagent": "^3.5.2"
   }
 }

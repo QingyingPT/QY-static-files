@@ -4,8 +4,16 @@
   right: 0;
   width: 60px;
   height: 100px;
-  -webkit-transition: all .25s ease-in-out;
-          transition: all .25s ease-in-out;
+  font-size: 14px;
+  -webkit-transition: all .35s ease-in-out;
+          transition: all .35s ease-in-out;
+}
+.userinfo-sticky-container.bgcolor {
+  background-color: rgba(255, 255, 255, .8);
+}
+
+.userinfo-sticky-container .hide {
+  display: none;
 }
 
 .userinfo-sticky-avatar {
@@ -13,6 +21,8 @@
   height: 60px;
   border-radius: 30px;
   overflow: hidden;
+  /* allow click event */
+  cursor: pointer;
 }
 .userinfo-sticky-avatar > img {
   width: 60px;
@@ -23,28 +33,44 @@
 }
 
 .userinfo-sticky-line {
-  line-height: 20px;
-  height: 20px;
-  vertical-align: middle;
+  height: 20px; 
 }
 
-.userinfo-sticky-line > a[type="button"] {
+a.userinfo-sticky[type="button"] {
+  display: inline-block;
+  width: 100%;
   border: 0 none;
+  outline: none;
   text-decoration: none;
   text-align: center;
+  line-height: 20px;
+  vertical-align: middle;
   background-color: transparent;
   -webkit-transition: all .25s ease;
           transition: all .25s ease;
 }
-.userinfo-sticky-line > a[type="button"]:hover,
-.userinfo-sticky-line > a[type="button"]:active {
+a.userinfo-sticky[type="button"]:hover,
+a.userinfo-sticky[type="button"]:active {
   text-decoration: none;
-  background-color: #adadad;
+  background-color: #dedede;
 }
 
 a[type="button"].userinfo-sticky-msg.important {
-  
+  background-color: #f9a0a0;
 }
 a[type="button"].userinfo-sticky-sign.disabled {
   background-color: #adadad;
+}
+
+.userinfo-sticky-details-panel {
+  position: absolute;
+  top: 0;
+  right: 60px; 
+  width: 120px;
+}
+.userinfo-sticky-control-panel {
+  position: absolute;
+  top: 100px;
+  right: 0; 
+  left: 0;
 }

@@ -20,7 +20,7 @@ const commonChunkPlugin = new webpack.optimize.CommonsChunkPlugin({
 
 module.exports = {
   entry: {
-    vendor: ['ramda', 'superagent'],
+    vendor: ['superagent/superagent'],
     styles: './src/styles/index.js',
     userinfo: './src/userinfo/index.js',
   },
@@ -66,5 +66,5 @@ module.exports = {
 };
 
 if (require.main === module) {
-  console.info(module.exports);
+  console.info(module.exports); // eslint-disable-line
 }

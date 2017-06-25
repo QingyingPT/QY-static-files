@@ -1,4 +1,10 @@
-import R from 'ramda';
+const processData = (raw) => {
+  try {
+    return JSON.parse(raw);
+  } catch (ex) {
+    return raw;
+  }
+};
 
 export default fn => (err, res) => {
   if (err) {
@@ -7,6 +13,5 @@ export default fn => (err, res) => {
   } else if (!res.ok) {
     fn(new Error('Unknow error'));
   }
-
-  R.tryCatch(R.pipe(JSON.parse, fn), fn)(res.body);
+  fn(null, processData(res.body));
 };
