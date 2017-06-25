@@ -8,9 +8,6 @@
   -webkit-transition: all .35s ease-in-out;
           transition: all .35s ease-in-out;
 }
-.userinfo-sticky-container.bgcolor > section {
-  background-color: rgba(255, 255, 255, .8);
-}
 
 .userinfo-sticky-container .hide {
   display: none;
@@ -34,7 +31,8 @@
 
 .userinfo-sticky-line {
   /*height: 20px;*/
-  word-break: break-all;
+  word-break: break-word;
+  background-color: rgba(255, 255, 255, .95);
 }
 
 a.userinfo-sticky[type="button"] {
@@ -57,6 +55,8 @@ a.userinfo-sticky[type="button"]:active {
 }
 
 a[type="button"].userinfo-sticky-msg.important {
+  font-weight: normal;
+  color: #fff;
   background-color: #f9a0a0;
 }
 
@@ -64,9 +64,13 @@ a[type="button"].userinfo-sticky-msg.important {
   position: absolute;
   top: 0;
   right: 60px;
-  bottom: 0;
-  width: 120px;
+  width: 140px;
+  padding: 10px;
 }
+.userinfo-sticky-details-panel > .userinfo-sticky-line {
+  text-align: center;
+}
+
 .userinfo-sticky-control-panel {
   position: absolute;
   top: 150px;
