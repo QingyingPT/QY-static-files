@@ -71,42 +71,50 @@ const drawDatails = (con) => {
   holder.classList.add('userinfo-sticky-details-panel', 'hide');
   con.appendChild(holder);
 
+  const lines = [];
+
   const line1 = document.createElement('div');
   line1.classList.add('userinfo-sticky-line');
   const usernameLink = document.createElement('a');
   usernameLink.classList.add('username-link'); // not compatible old style
   usernameLink.target = '_blank';
   line1.appendChild(usernameLink);
+  lines.push(line1);
 
   const line2 = document.createElement('div');
   line2.classList.add('userinfo-sticky-line');
   const upSpan = document.createElement('span');
   upSpan.appendChild(document.createTextNode('流量贡献度: '));
   line2.appendChild(upSpan);
+  lines.push(line2);
 
   const line3 = document.createElement('div');
   line3.classList.add('userinfo-sticky-line');
   const timeSpan = document.createElement('span');
   timeSpan.appendChild(document.createTextNode('时间贡献度: '));
   line3.appendChild(timeSpan);
+  lines.push(line3);
 
   const line4 = document.createElement('div');
   line4.classList.add('userinfo-sticky-line');
   const hpSpan = document.createElement('span');
   hpSpan.appendChild(document.createTextNode('HP: '));
   line4.appendChild(hpSpan);
+  lines.push(line4);
 
   const line5 = document.createElement('div');
   line5.classList.add('userinfo-sticky-line');
   const seedSpan = document.createElement('span');
   seedSpan.appendChild(document.createTextNode('做种数: '));
   line5.appendChild(seedSpan);
+  lines.push(line5);
 
   const line6 = document.createElement('div');
   line6.classList.add('userinfo-sticky-line');
   const leechSpan = document.createElement('span');
   leechSpan.appendChild(document.createTextNode('下载数: '));
   line6.appendChild(leechSpan);
+  lines.push(line6);
 
   const line7 = document.createElement('div');
   line7.classList.add('userinfo-sticky-line');
@@ -118,14 +126,35 @@ const drawDatails = (con) => {
   clearButtonLink.target = '_blank';
   clearButtonLink.appendChild(document.createTextNode('清理冗余种子'));
   line7.appendChild(clearButtonLink);
+  lines.push(line7);
 
-  holder.appendChild(line1);
-  holder.appendChild(line2);
-  holder.appendChild(line3);
-  holder.appendChild(line4);
-  holder.appendChild(line5);
-  holder.appendChild(line6);
-  holder.appendChild(line7);
+  const line8 = document.createElement('div');
+  line8.classList.add('userinfo-sticky-line');
+  const exchangeBonus = document.createElement('a');
+  exchangeBonus.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
+  exchangeBonus.type = 'button';
+  exchangeBonus.title = '兑换100魔力';
+  exchangeBonus.href = '/tracker/bonus.php?method=exchange&n=100';
+  exchangeBonus.target = '_blank';
+  exchangeBonus.appendChild(document.createTextNode('兑换100魔力'));
+  line8.appendChild(exchangeBonus);
+  lines.push(line8);
+
+  const line9 = document.createElement('div');
+  line9.classList.add('userinfo-sticky-line');
+  const exchangeHP = document.createElement('a');
+  exchangeHP.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
+  exchangeHP.type = 'button';
+  exchangeHP.title = '兑换100HP';
+  exchangeHP.href = '/tracker/bonus.php?method=exchange&n=100&heal=hp';
+  exchangeHP.target = '_blank';
+  exchangeHP.appendChild(document.createTextNode('兑换100HP'));
+  line9.appendChild(exchangeBonus);
+  lines.push(line9);
+
+  lines.forEach((line) => {
+    holder.appendChild(line);
+  });
 
   return ({ info, tracker }) => {
     usernameLink.classList.add(`UC_${info.class}`);
