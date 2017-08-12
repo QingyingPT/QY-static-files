@@ -130,26 +130,26 @@ const drawDatails = (con) => {
 
   const line8 = document.createElement('div');
   line8.classList.add('userinfo-sticky-line');
-  const exchangeBonus = document.createElement('a');
-  exchangeBonus.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
-  exchangeBonus.type = 'button';
-  exchangeBonus.title = '兑换100魔力';
-  exchangeBonus.href = '/tracker/bonus.php?method=exchange&n=100';
-  exchangeBonus.target = '_blank';
-  exchangeBonus.appendChild(document.createTextNode('兑换100魔力'));
-  line8.appendChild(exchangeBonus);
+  const exchangeBonusLink = document.createElement('a');
+  exchangeBonusLink.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
+  exchangeBonusLink.type = 'button';
+  exchangeBonusLink.title = '兑换100魔力';
+  exchangeBonusLink.href = '/tracker/bonus.php?method=exchange&n=100';
+  exchangeBonusLink.target = '_blank';
+  exchangeBonusLink.appendChild(document.createTextNode('兑换100魔力'));
+  line8.appendChild(exchangeBonusLink);
   lines.push(line8);
 
   const line9 = document.createElement('div');
   line9.classList.add('userinfo-sticky-line');
-  const exchangeHP = document.createElement('a');
-  exchangeHP.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
-  exchangeHP.type = 'button';
-  exchangeHP.title = '兑换100HP';
-  exchangeHP.href = '/tracker/bonus.php?method=exchange&n=100&heal=hp';
-  exchangeHP.target = '_blank';
-  exchangeHP.appendChild(document.createTextNode('兑换100HP'));
-  line9.appendChild(exchangeBonus);
+  const exchangeHPLink = document.createElement('a');
+  exchangeHPLink.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
+  exchangeHPLink.type = 'button';
+  exchangeHPLink.title = '兑换100HP';
+  exchangeHPLink.href = '/tracker/bonus.php?method=exchange&n=100&heal=hp';
+  exchangeHPLink.target = '_blank';
+  exchangeHPLink.appendChild(document.createTextNode('兑换100HP'));
+  line9.appendChild(exchangeHPLink);
   lines.push(line9);
 
   lines.forEach((line) => {
