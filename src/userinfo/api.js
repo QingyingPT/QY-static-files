@@ -4,6 +4,7 @@ import requestHandle from '../utils/requestHandle';
 
 const infopath = '/tracker/info.php';
 const bonuspath = '/tracker/bonus.php';
+const signinpath = '/take_signin_bonus.php';
 
 export const getBasicInfo = fn => request
   .get(infopath)
@@ -29,9 +30,9 @@ export const getSignInfo = fn => request
   .query({ info: 'sign', type: 'view' })
   .end(requestHandle(fn));
 
-export const sign = fn => request
-  .get('/take_signin_bonus.php')
-  .query({ total_days: '1' })
+export const signin = fn => request
+  .get(signinpath)
+  .query({ sign: '1' })
   .end(requestHandle(fn));
 
 export const clearTracker = fn => request
