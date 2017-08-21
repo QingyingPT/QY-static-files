@@ -6,7 +6,7 @@ import checkInner from '../utils/checkInner';
 import defaultUserInfo from '../default/userinfo.simple.json';
 import defaultUserSign from '../default/usersign.view.json';
 import defaultTrackerData from '../default/usertracker.json';
-
+// TODO： 替换alert为自动消失的网页内效果
 const drawAvatar = (con) => {
   const holder = document.createElement('section');
   holder.classList.add('userinfo-sticky-avatar');
@@ -38,7 +38,15 @@ const drawDefaultPanel = (con) => {
   const signBtn = document.createElement('a');
   signBtn.classList.add('userinfo-sticky', 'userinfo-sticky-sign');
   signBtn.type = 'button';
-  signBtn.href = '/take_signin_bonus.php?total_days=1';
+ // signBtn.href = '/take_signin_bonus.php?total_days=1';
+  signBtn.onclick = () => {
+    api.sign((err, data) => {
+      if (!err && data) {
+        alert(`签到成功,已签${data.t}天`);
+        // data.l是什么?
+      }
+    });
+  };
   signBtn.title = '点击签到';
   line2.appendChild(signBtn);
 
@@ -122,8 +130,16 @@ const drawDatails = (con) => {
   clearButtonLink.classList.add('userinfo-sticky', 'userinfo-sticky-cleartracker-link');
   clearButtonLink.type = 'button';
   clearButtonLink.title = '清理冗余种子';
-  clearButtonLink.href = '/tracker/info.php?info=tracker&type=clean';
-  clearButtonLink.target = '_blank';
+  clearButtonLink.onclick = () => {
+    api.clearTracker((err, data) => {
+      if (!err && data) {
+        if (data === '0') alert('清理成功');
+        else alert('清理失败');
+      }
+    });
+  };
+  // clearButtonLink.href = '/tracker/info.php?info=tracker&type=clean';
+  // clearButtonLink.target = '_blank';
   clearButtonLink.appendChild(document.createTextNode('清理冗余种子'));
   line7.appendChild(clearButtonLink);
   lines.push(line7);
@@ -133,9 +149,22 @@ const drawDatails = (con) => {
   const exchangeBonusLink = document.createElement('a');
   exchangeBonusLink.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
   exchangeBonusLink.type = 'button';
-  exchangeBonusLink.title = '兑换100魔力';
-  exchangeBonusLink.href = '/tracker/bonus.php?method=exchange&n=100';
-  exchangeBonusLink.target = '_blank';
+  exchangeBonusLink.title = '兑换魔力值';
+  exchangeBonusLink.onclick = () => {
+    const num = prompt('请输入要兑换的魔力值', 100);
+    const n = parseInt(num, 10);
+    if (n > 100) {
+      api.exchangeBonus((err, data) => {
+        if (!err && data) {
+          alert(`使用${data.cost}HP值兑换了${data.n}魔力值`);
+        }
+      }, n);
+    } else {
+      alert('请兑换100以上的魔力值');
+    }
+  };
+  // exchangeBonusLink.href = '/tracker/bonus.php?method=exchange&n=100';
+  // exchangeBonusLink.target = '_blank';
   exchangeBonusLink.appendChild(document.createTextNode('兑换100魔力'));
   line8.appendChild(exchangeBonusLink);
   lines.push(line8);
@@ -145,9 +174,22 @@ const drawDatails = (con) => {
   const exchangeHPLink = document.createElement('a');
   exchangeHPLink.classList.add('userinfo-sticky', 'userinfo-sticky-exchange-link');
   exchangeHPLink.type = 'button';
-  exchangeHPLink.title = '兑换100HP';
-  exchangeHPLink.href = '/tracker/bonus.php?method=exchange&n=100&heal=hp';
-  exchangeHPLink.target = '_blank';
+  exchangeHPLink.title = '兑换HP';
+  exchangeHPLink.onclick = () => {
+    const num = prompt('请输入要兑换的HP值', 100);
+    const n = parseInt(num, 10);
+    if (n > 100) {
+      api.exchangeHp((err, data) => {
+        if (!err && data) {
+          alert(`使用${data.cost}魔力值兑换了${data.n}HP值`);
+        }
+      }, n);
+    } else {
+      alert('请兑换100以上的HP值');
+    }
+  };
+  // exchangeHPLink.href = '/tracker/bonus.php?method=exchange&n=100&heal=hp';
+  // exchangeHPLink.target = '_blank';
   exchangeHPLink.appendChild(document.createTextNode('兑换100HP'));
   line9.appendChild(exchangeHPLink);
   lines.push(line9);
